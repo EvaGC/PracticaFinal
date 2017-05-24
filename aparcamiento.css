@@ -1,0 +1,245 @@
+#mark{
+	padding-left: 100px;
+	padding-top: 100px;
+}
+
+i.fa.fa-map-marker.fa-5x.fa-fw {
+    font-size: 300%;
+    padding-top: 60px;
+    padding-left: 100px;
+    color: white;
+}
+
+ul.nav.navbar-nav.navbar-right {
+    margin-top: 90px;
+    font-size: 160%;
+    margin-right: 170px;
+}
+
+.container-fluid {
+	background-color: #71AFFF;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 80px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+    color:white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+div.center.col-md-8.well.center{
+    margin-right: 30px;
+    margin-top: 40px;
+    height: 500px; 
+    width: 500px;
+    float:left;
+    box-shadow: 5px 5px 5px #888;
+    overflow-y: scroll;
+    background-color: #DFEEF9;
+}
+
+.col-md-11.well{
+    margin-left: 55px;
+    background-color: #A0D2F7;
+    box-shadow: 5px 5px 5px #888;
+}
+div#miscoleccionesPrincipal{
+	height: 60px; 
+	background-color: #08436F;
+	text-align: center;
+	margin-top: 15px;
+}
+
+p#miscolecciones{
+	font-size: 35px;
+	padding-top: 4px;
+	color: wheat;
+}
+#mapid { 
+	height: 500px; 
+	width: 650px;
+	margin: 40px;
+    box-shadow: 5px 5px 5px #888;
+    float:left;
+}
+
+div.scroll{
+	background-color: #DFEEF9;
+	margin-right: 30px;
+	margin-top: 40px;
+	height: 500px; 
+	width: 500px;
+    box-shadow: 5px 5px 5px #888;
+    float:left;
+    text-align: center;
+}
+
+div#divcolecciones{
+    height: 500px; 
+    width: 650px;
+    margin: 40px;
+    float:left;
+    background-color: #A0D2F7;
+    overflow-y: scroll;
+}
+
+.col-lg-8.crearcoleccion {
+    padding-top: 30px;
+    text-align: center;
+    margin-left: 110px;
+}
+
+.contenido{
+    font-size: 30px;
+}
+
+i.fa.fa-cloud-download.fa-5x.fa-fw.cloud {
+    padding-top: 43%;
+}
+
+.col-md-12.coleccion{
+    background-color: #08436F;
+    float:left;
+    padding-left: 180px;
+}
+
+i.fa.fa-plus-circle.fa-4x.fa-fw {
+    margin-top: 24px;
+    color: wheat;
+}
+p#nuevacoleccion{
+    font-size: 30px;
+    float:left;
+    color: wheat;
+    margin-top: 30px;
+    padding-bottom: 25px;
+}
+
+.info{
+	float:left;
+	padding-top: 60px;
+}
+
+button.submit {
+	background-color: #DFEEF9;
+}
+
+.carousel {
+    float: left;
+    margin-left: 193px;
+}
+
+input#textcoleccion {
+    margin-left: 210px;
+    margin-top: 50px;
+    background-color: #DFEEF9;
+}
+
+.leaflet-popup-content-wrapper {
+    text-align: center;
+    background-color: #ffffe6;
+}
+
+p.paparcamiento {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+div#instalaciones {
+    margin-left: 55px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+p#usergoogle {
+    font-size: 130%;
+}
+
+a#usuariosgoogle{
+	margin-left: 20px;
+}
+i.fa.fa-5x.fa-user-circle-o.google{
+	margin-left: 32px;
+	color: #71AFFF;
+
+}
+
+.todascolecciones {
+    margin-left: 190px;
+}
+
+.darusuariosgoogle {
+    margin-left: 50px;
+    margin-bottom: 40px;
+    float:left;
+}
+
+
+.dosiconos {
+    margin-top: 170px;
+    margin-left: 666px;
+    color: black;
+}
+
+i.fa.fa-floppy-o {
+    margin-left: 52px;
+    color: black;
+}
+
+div#guardarBOTON{
+    margin-left: 150px;
+    margin-top: 15px;
+    background-color:#DFEEF9;
+}
+
+div#cargarBOTON{
+	margin-left: 150px;
+    margin-top: 15px;
+    background-color:#DFEEF9;
+
+}
+.modal-content{
+	background-color:#A0D2F7;	
+}
+input#fichero, input#repositorio, input#token, input#ficherocargar{
+	background-color:#DFEEF9;
+}
+
+ul.list-group.col-md-4.well.usuarioGoogle {
+    text-align: center;
+    color: wheat;
+    background-color: #08436F;
+    margin-left: 100px;
+}
+.textoUsuariosGoogle {
+    height: 235px;
+    width: 650px;
+    margin-bottom: 60px;
+    padding-left: 30px;
+    margin-top: 55px;
+    overflow-y: scroll;
+}
+
+.col-md-11.well.droppable.ui-droppable {
+    margin-left: 23px;
+}
+
+p#misusuarios{
+    font-size: 35px;
+    padding-top: 4px;
+    color: wheat;
+}
+
+div#misusuariosgoogle{
+    height: 60px; 
+    background-color: #08436F;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 50px;
+}
