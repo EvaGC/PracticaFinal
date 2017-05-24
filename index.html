@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<meta charset="utf-8">
-    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>APARCAMIENTOS</title>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-			<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
-		    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
-		    crossorigin=""/>
-		    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-			<link rel="stylesheet" href="aparcamiento.css"/>
-			
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>APARCAMIENTOS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+	    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+	    crossorigin=""/>
+	    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+		<link rel="stylesheet" href="aparcamiento.css"/>
 	</head>
 	<body>
 
@@ -109,75 +108,75 @@
 
 
 
-<!-- Modal CARGAR-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Cargar JSON de GitHub</h4>
-      </div>
-      <div class="modal-body">
-		<form class="form-horizontal" id="form-file-github">
-		  	<div class="form-group">
-		   		<label class="control-label col-sm-2" id ="file-json" for="ficherocargar">Fichero:</label>
-		    	<div class="col-sm-10"> 
-		      		<input type="text" class="form-control" id="ficherocargar" placeholder="Nombre del fichero">
-		    	</div>
-		  	</div>
-			  <div class="form-group"> 
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <div id="cargarBOTON" class="btn btn-default">Submit</div>
+		<!-- Modal CARGAR-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Cargar JSON de GitHub</h4>
+		      </div>
+		      <div class="modal-body">
+				<form class="form-horizontal" id="form-file-github">
+				  	<div class="form-group">
+				   		<label class="control-label col-sm-2" id ="file-json" for="ficherocargar">Fichero:</label>
+				    	<div class="col-sm-10"> 
+				      		<input type="text" class="form-control" id="ficherocargar" placeholder="Nombre del fichero">
+				    	</div>
+				  	</div>
+					  <div class="form-group"> 
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <div id="cargarBOTON" class="btn btn-default">Submit</div>
+					    </div>
+					  </div>
+				</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+		<!-- Modal GUARDAR -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel2">Guardar en GitHub</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form class="form-horizontal" id="save-file-github">
+				  <div class="form-group">
+				    <label class="control-label col-sm-2"  id ="token-json"  for="token">Token:</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="token" placeholder="Token de Github">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label class="control-label col-sm-2" id ="repo-json" for="repositorio">Nombre:</label>
+				    <div class="col-sm-10"> 
+				      <input type="text" class="form-control" id="repositorio" placeholder="Nombre de un repositorio">
+				    </div>
+				  </div>
+
+				  	<div class="form-group">
+				   		<label class="control-label col-sm-2" id ="file-json-save" for="fichero">Fichero:</label>
+				    	<div class="col-sm-10"> 
+				      		<input type="text" class="form-control" id="fichero" placeholder="Nombre del fichero">
+				    	</div>
+				  	</div>
+
+				  <div class="form-group"> 
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <div id="guardarBOTON"  class="btn btn-default ">Submit</div>
+				    </div>
+				  </div>
+				</form>
+			  	</div>
 			    </div>
 			  </div>
-		</form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal GUARDAR -->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel2">Guardar en GitHub</h4>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" id="save-file-github">
-		  <div class="form-group">
-		    <label class="control-label col-sm-2"  id ="token-json"  for="token">Token:</label>
-		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="token" placeholder="Token de Github">
-		    </div>
-		  </div>
-
-		  <div class="form-group">
-		    <label class="control-label col-sm-2" id ="repo-json" for="repositorio">Nombre:</label>
-		    <div class="col-sm-10"> 
-		      <input type="text" class="form-control" id="repositorio" placeholder="Nombre de un repositorio">
-		    </div>
-		  </div>
-
-		  	<div class="form-group">
-		   		<label class="control-label col-sm-2" id ="file-json-save" for="fichero">Fichero:</label>
-		    	<div class="col-sm-10"> 
-		      		<input type="text" class="form-control" id="fichero" placeholder="Nombre del fichero">
-		    	</div>
-		  	</div>
-
-		  <div class="form-group"> 
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <div id="guardarBOTON"  class="btn btn-default ">Submit</div>
-		    </div>
-		  </div>
-		</form>
-	  	</div>
-	    </div>
-	  </div>
-	</div>
+			</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
