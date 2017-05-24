@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>APARCAMIENTOS</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+		    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+		    crossorigin=""/>
+		    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+			<link rel="stylesheet" href="aparcamiento.css"/>
+			
+	</head>
+	<body>
+
+	<!-- BANNER -->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	  	<a id="mark" ><i class="fa fa-map-marker fa-5x fa-fw" aria-hidden="true">APARCAMIENTO PARA RESIDENTES</i></a>
+	    </div>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      
+	    <ul class="nav navbar-nav navbar-right" role="tablist">
+	    <li role="presentation" class="active"><a href="#principal" aria-controls="principal" role="tab" data-toggle="tab">Principal</a></li>
+	    <li role="presentation"><a href="#colecciones" aria-controls="colecciones" role="tab" data-toggle="tab">Colecciones</a></li>
+	    <li role="presentation"><a href="#instalaciones" aria-controls="instalaciones" role="tab" data-toggle="tab">Instalaciones</a></li>
+	      </ul>
+	    <div class = "dosiconos"><i class="fa fa-2x fa-spinner cargar" data-toggle="modal" data-target="#myModal" aria-hidden="true"> Cargar</i>
+	    <i class="fa fa-2x fa-floppy-o guardar" data-toggle="modal" data-target="#myModal2" aria-hidden="true"> Guardar</i>
+	    </div>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<div class = "banner">
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	   <!-- PRINCIPAL -->
+	    <div role="tabpanel" class="tab-pane active" id="principal">
+	    	<div id="mapid"></div>
+	    	<div class="scroll">
+	    		<i class="fa fa-cloud-download fa-5x fa-fw cloud" aria-hidden="true"></i>
+	    		<p class = "contenido">Mostrar contenido</p>
+	    	</div>
+	    	<div class="textoApar"></div>
+	    	<div class="textoContenido"></div>
+	    	<div class="col-md-12 miscolecciones">
+				<div id = miscoleccionesPrincipal>
+					<p id= "miscolecciones">Mis Colecciones</p>
+				</div>
+			</div>
+			<div class="todascolecciones"></div>
+	    </div>
+
+	    <!-- COLECCIONES -->
+	    <div role="tabpanel" class="tab-pane" id="colecciones">
+	    	<div id="divcolecciones">
+				<div class="col-md-12 coleccion">
+					<i class="fa fa-plus-circle fa-4x fa-fw" aria-hidden="true"></i><p id = "nuevacoleccion">Mis colecciones</p>
+				</div>
+
+
+				<input id="textcoleccion" placeholder="nueva colección">
+				<button type="button" class="btn btn-default submit">Submit</button>
+				<div class="newcoleccion"></div>
+
+	    	</div>
+
+	    	<div class="scroll">
+	    		<i class="fa fa-cloud-download fa-5x fa-fw cloud" aria-hidden="true"></i>
+	    		<p class = "contenido">Mostrar contenido</p>
+	    	</div>
+	    	<div class="textoAparDragable"></div>
+	
+	    </div>
+	    <!-- INSTALACIONES -->
+	    <div role="tabpanel" class="tab-pane" id="instalaciones">
+	    	<div class = "darusuariosgoogle">
+	    		<a><i class="fa fa-5x fa-user-circle-o google" aria-hidden="true"></i></a>
+	    		<a><p id = usergoogle>Usuarios Google+</p></a>
+	   		</div>
+	    	<div id = "resultado"></div>
+	    	<div class="textoUsuariosGoogle"></div>
+			<div class="textoContenido2"></div>
+			<div class="textotodosusuariosgoogle"></div>
+			<div class="col-md-12 misusuariosG">
+				<div id = misusuariosgoogle>
+					<p id= "misusuarios">Seguidores</p>
+				</div>
+				<div class="todosusuarios"></div>
+			</div> 
+		</div>
+	   </div>
+	</div>
+
+	<!-- /.BANNER -->
+
+
+
+
+<!-- Modal CARGAR-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Cargar JSON de GitHub</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal" id="form-file-github">
+		  	<div class="form-group">
+		   		<label class="control-label col-sm-2" id ="file-json" for="ficherocargar">Fichero:</label>
+		    	<div class="col-sm-10"> 
+		      		<input type="text" class="form-control" id="ficherocargar" placeholder="Nombre del fichero">
+		    	</div>
+		  	</div>
+			  <div class="form-group"> 
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <div id="cargarBOTON" class="btn btn-default">Submit</div>
+			    </div>
+			  </div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal GUARDAR -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel2">Guardar en GitHub</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="save-file-github">
+		  <div class="form-group">
+		    <label class="control-label col-sm-2"  id ="token-json"  for="token">Token:</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="token" placeholder="Token de Github">
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <label class="control-label col-sm-2" id ="repo-json" for="repositorio">Nombre:</label>
+		    <div class="col-sm-10"> 
+		      <input type="text" class="form-control" id="repositorio" placeholder="Nombre de un repositorio">
+		    </div>
+		  </div>
+
+		  	<div class="form-group">
+		   		<label class="control-label col-sm-2" id ="file-json-save" for="fichero">Fichero:</label>
+		    	<div class="col-sm-10"> 
+		      		<input type="text" class="form-control" id="fichero" placeholder="Nombre del fichero">
+		    	</div>
+		  	</div>
+
+		  <div class="form-group"> 
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <div id="guardarBOTON"  class="btn btn-default ">Submit</div>
+		    </div>
+		  </div>
+		</form>
+	  	</div>
+	    </div>
+	  </div>
+	</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+	    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+  		<script src="https://apis.google.com/js/api.js"></script>
+  		<script src="github.js"></script>
+  		<script src="aparcamiento.js"></script>
+	</body>
+</html>
