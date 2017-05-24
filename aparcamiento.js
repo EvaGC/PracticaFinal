@@ -61,28 +61,7 @@ function checkFollowers(id){
 					var miscolecaprinci = "";
 					var coleccionesJSON = "";
 					var userJSON = "";
-					//console.log(obj.colecciones[0].nombrecoleccion);
-					//console.log(obj.colecciones[0].parkings);
-					//console.log(obj.seguidores[0].followers)
-/*
-					var coleccionesJSON = "";
-					var userJSON = "";
-					var miscolecaprinci = "";
-					miscolecaprinci += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:30px; margin-left:30px;margin-top:20px; overflow-y: auto;'>" + obj.colecciones[0].parkings + " --> "+obj.colecciones[0].nombrecoleccion +"</li>");
-					miscolecaprinci += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:30px; margin-left:30px;margin-top:20px; overflow-y: auto;'>" + obj.colecciones[1].parkings + " --> "+obj.colecciones[1].nombrecoleccion +"</li>");
-					miscolecaprinci += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:30px; margin-left:30px;margin-top:20px; overflow-y: auto;'>" + obj.colecciones[2].parkings + " -- >"+obj.colecciones[2].nombrecoleccion + "</li>");
-					coleccionesJSON += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:165px; margin-top:20px; overflow-y: auto;'>" + obj.colecciones[0].parkings + " --> "+obj.colecciones[0].nombrecoleccion +"</li>");
-					coleccionesJSON += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:165px; margin-top:20px; overflow-y: auto;'>" + obj.colecciones[1].parkings + " --> "+obj.colecciones[1].nombrecoleccion +"</li>");
-					coleccionesJSON += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:165px; margin-top:20px; overflow-y: auto;'>" + obj.colecciones[2].parkings + " -- >"+obj.colecciones[2].nombrecoleccion + "</li>");
-					
-					$(".newcoleccion").html(miscolecaprinci);
-					$(".todascolecciones").html(coleccionesJSON);
-						
-					
-					userJSON += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:48px; margin-top:20px; overflow-y: auto;'>"+obj.seguidores[0].followers[1]+ "</li>");
-					userJSON += ("<li class='list-group-item' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-right:48px; margin-top:20px; overflow-y: auto;'>"+obj.seguidores[0].followers[0]+ "</li>");
-					$(".todosusuarios").html(userJSON);
-					*/
+	
 					for(var i = 0; i < obj.colecciones.length; i++){
 						miscolecaprinci +=	("<ul class='list-group col-md-6 well droppable ui-droppable' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-left:165px; margin-top:20px; overflow-y: auto;'>"+ obj.colecciones[i].nombrecoleccion +
 							"<li class='list-group-item'>"+ obj.colecciones[i].parkings + "</li>"+"</ul>");
@@ -114,10 +93,8 @@ function checkFollowers(id){
 		var repo=github.getRepo("EvaGC", repo);
 
 		var info = {};
-	    //info["collections"] = collections;
 	    info["seguidores"] = pFollowers;
 	    info["colecciones"] = pParkings;
-	    //parkings y parkings con usuarios
 	    var myJSON = JSON.stringify(info);
 
 		repo.write('master', fichero, myJSON, "Updating data", function(err) {
@@ -197,7 +174,6 @@ $(document).ready(function () {
 
 
 			s.onmessage = function (e) {
-				//userid.push(e.data);
 				if (userid.length == 0){
 					userid.push(e.data);
 				}else{
@@ -230,15 +206,11 @@ $(document).ready(function () {
 	   var contenido2 = "";
 	   var div = "";
 	   var contenido = "";
-	   //var arrayaparcamientos = [];
 	   
 	   var cadena = $.getJSON("aparcamiento.json", function( data ) { 
 	   		var objectarray = data["@graph"];
-	   		//arrayaparcamientos.push(objectarray);
 	   		
 	        for (l in objectarray) {
-	        	//console.log(l)
-	        	//var posicion = [];
 	        	var aparcamiento = objectarray[l].title;
 	        	var localidad = objectarray[l]["address"].locality;
 	   			var postal = objectarray[l]["address"]["postal-code"];
@@ -346,10 +318,6 @@ $(document).ready(function () {
 						});
 
 
-
-
-
-
 						$(".textoContenido").html(contenido);
 
 						contenido2 = ("<div class = 'col-md-11 well droppable'>" + "<div class = 'info'>" + 
@@ -383,9 +351,8 @@ $(document).ready(function () {
 						      				id:id,
 						      				followers:[]
 						      			}
-						      		//console.log(id, "ID");
+						    
 						      		if(pos==-1){
-						      			//console.log(pfo.id, "pfo");
 						      			var user=ui.draggable.text();
 						      			pfo.followers.push(user);
 						      			pFollowers.push(pfo);
