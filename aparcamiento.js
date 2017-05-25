@@ -8,7 +8,7 @@ function checkFollowers(id){
 	for(var i=0;i < pFollowers.length;i++){
 		if(pFollowers[i].id==id){
 			f = ("<ul class = 'list-group col-md-7 well nombres' style='background-color:#08436F; color: wheat; font-size: 17px; text-align:center; margin-left:230px; margin-top:20px; overflow-y: auto;'>" + pFollowers[i].followers + "</ul>");
-			$(".todosusuarios").prepend(f);
+			$(".todosusuarios2").html(f);
 			return i;
 		}
 	}
@@ -303,9 +303,6 @@ $(document).ready(function () {
 						contenido += ("</div></div>");
 						
 
-
-
-
 			        	var pop = "";
 				        pop += '<p>' + apar + '</p><br/>';
 						pop += "<button class='delete'>cerrar</button>"
@@ -359,7 +356,6 @@ $(document).ready(function () {
 						      		}else{
 						      			var user=ui.draggable.text();
 						      			pFollowers[pos].followers.push(user);
-						      			console.log(pFollowers[pos].followers, "aquiii")
 						      		}
 								}
 						
